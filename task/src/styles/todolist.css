@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    width: 800px;
+    margin: 30px 15px;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.ToDoList {
+    padding: 15px;
+    display: flex;
+    border: solid 2px gray;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 2%;
+    color: white;
+}
+
+.btn {
+    background-color: #7F41FF;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    opacity: 50%;
+    background-color: #7F41FF;
+    box-shadow: inset 0 0 0 3px #7F41FF;
+}
+
+input {
+    padding: 15px 0px;
+    width: 100%;
+
+}
+
+.listshow{
+    margin: 0 30px;
+}
