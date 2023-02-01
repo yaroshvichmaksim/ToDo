@@ -9,25 +9,21 @@ function App() {
 
   var todo1 = [];
   const [todos, setTodos] = useState(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []);
-  console.log(todos);
+ 
 
   const list = JSON.parse(localStorage.getItem(localStorage.getItem('todos')));
-  console.log(list);
+ 
 
   const createToDo = (addToDo) => {
-
-    console.log(addToDo);
+    localStorage.clear();
     todo1 = todos;
+    localStorage.clear();
     setTodos([...todo1, addToDo]);
 
-    console.log(todo1);
     localStorage.setItem('todos', JSON.stringify(todo1));
-    console.log(todos);
+
     console.log(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [])
-    setTimeout(1000);
-
-
-    console.log(todos);
+  
   }
   const deleteToDo = (toDo) => {
 
