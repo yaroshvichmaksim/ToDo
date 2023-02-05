@@ -21,16 +21,6 @@ const ToDoForm = ({ create, removeAll }) => {
   }
 
   return (
-    /*<form>
-      <div>
-        <Input
-          type="text"
-          placeholder="Добавить задачу"
-          onChange={e => setToDo(e.target.value)}
-          value={newToDo} />
-        <a style={{ width: '49%', marginTop: '10px' }} onClick={AddNewToDo} className="btn btn-primary btn-sm " href="#" role="button">Добавить задачу</a>
-        <a style={{ float: 'right', width: '49%', marginTop: '10px' }} onClick={removeAll} className="btn btn-primary btn-sm " href="#" role="button">Очистить все</a>
-      </div>*/
 
 
     <div class="container-fluid">
