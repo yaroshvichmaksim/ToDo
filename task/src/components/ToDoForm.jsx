@@ -15,16 +15,13 @@ const ToDoForm = ({ create, removeAll }) => {
     console.log(addToDO.id)
     const date = new Date(addToDO.id);
     console.log(date.getFullYear().toString() + " " + date.getDate().toString() + " " + date.getMonth().toString() + 1 + " " + date.getHours().toString() + ":" + date.getMinutes().toString());
-    //setTodos([...todos, addToDO]);
     create(addToDO);
     setToDo('');
-    
-   // addToDO = JSON.parse(localStorage.getItem("ToDo"));
-    //console.log(addToDo);
+
   }
 
   return (
-    <form>
+    /*<form>
       <div>
         <Input
           type="text"
@@ -33,8 +30,31 @@ const ToDoForm = ({ create, removeAll }) => {
           value={newToDo} />
         <a style={{ width: '49%', marginTop: '10px' }} onClick={AddNewToDo} className="btn btn-primary btn-sm " href="#" role="button">Добавить задачу</a>
         <a style={{ float: 'right', width: '49%', marginTop: '10px' }} onClick={removeAll} className="btn btn-primary btn-sm " href="#" role="button">Очистить все</a>
+      </div>*/
+
+
+    <div class="container-fluid">
+
+      <div class="col-md-4 offset-md-4">
+        <div class="form-container">
+          <h3 class="title">Todo</h3>
+          <form class="form-horizontal">
+            <div class="form-group">
+
+              <Input
+                class="form-control"
+                type="text"
+                placeholder="Добавить задачу"
+                onChange={e => setToDo(e.target.value)}
+                value={newToDo} />
+            </div>
+            <a onClick={AddNewToDo} class="btn btn-default">Добавить</a>
+          </form>
+        </div>
       </div>
-    </form>
+
+    </div>
+
   )
 }
 

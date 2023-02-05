@@ -6,7 +6,12 @@
 
 .App {
     width: 800px;
-    margin: 30px 15px;
+    margin: auto auto;
+    justify-content: center;
+}
+
+.main {
+    width: 100%;
 }
 
 #root {
@@ -15,20 +20,23 @@
 }
 
 .ToDoList {
-    padding: 15px;
     display: flex;
-    border: solid 2px gray;
-    margin-top: 15px;
     align-items: center;
     justify-content: space-between;
-    border-radius: 2%;
-    color: white;
+    color: black;
+    margin-top: 30px;
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid #D4D4D4;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #A9A9A9;
 }
 
 .btn {
-    background-color: #7F41FF;
+    background-color: #ac40ab;
     color: white;
     border: none;
+    opacity: 70%;
 }
 
 .btn:hover {
@@ -38,11 +46,257 @@
 }
 
 input {
-    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
     width: 100%;
+    border: 1px solid #8a716a;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.5)
+}
+
+.listshow {
+    margin: 0 30px;
+}
+
+select {
+    opacity: 70%;
+    margin-left: 30px;
+    margin-right: auto;
+}
+
+.form-select {
+    width: 300px;
+}
+
+.clearAll {
+
+
+    margin-left: auto;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.ToDoList:hover {
+    opacity: 0.6;
+}
+
+.removebtn:hover {
+    opacity: 1;
 
 }
 
-.listshow{
-    margin: 0 30px;
+.service-icon {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 5px;
+    background: #9074E3;
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: -30px;
+    right: 40px;
+}
+
+.service-icon:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: -20px;
+    left: -45px;
+    opacity: 0.1;
+    transform: rotate(137deg) scale(1.5) skew(29deg) translate(-1px);
+}
+
+nav {
+    font-family: 'Bradley';
+    color: white;
+    font-size: larger;
+}
+
+.search {
+    margin-top: 30px;
+}
+
+nav {
+    font-family: 'Bradley';
+    color: white;
+    font-size: larger;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+
+.user-description {
+    border-left: 8px solid #3b336a;
+    border-bottom: 8px solid #3b336a;
+    border-right: 8px solid #3b336a;
+}
+
+.user-description .user-image {
+    position: relative;
+    text-align: center;
+}
+
+.user-description img {
+    width: 100%;
+    height: auto;
+}
+
+.user-description .description {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    color: #fff;
+    line-height: 30px;
+    padding: 40px 30px;
+    opacity: 0;
+    background-color: rgba(59, 51, 106, 0.6);
+    transition: all 0.5s ease 0s;
+}
+
+.user-description:hover .description {
+    opacity: 1;
+}
+
+.user-description:hover {
+    background: white;
+}
+
+.user-description .user-info {
+    padding: 20px;
+}
+
+.user-description .title {
+    font-size: 18px;
+    color: #3b336a;
+    letter-spacing: 4px;
+    margin: 0 0 15px 0;
+    transition: all 0.5s ease 0s;
+}
+
+.user-description .post {
+    display: block;
+    font-size: 14px;
+    color: #3b336a;
+    text-transform: capitalize;
+}
+
+.usercol {
+    background: rgba(255, 255, 255, 0.3);
+    margin: 20px 0px;
+
+}
+
+.user-description .title:hover,
+.user-idescriptionnfo .post:hover {
+    color: #bc3fbf;
+}
+
+.user-description .description .address {
+    font-size: large;
+    color: #fb5fe9;
+    position: absolute;
+
+
+    left: 0;
+    right: 0;
+}
+
+@media only screen and (max-width: 990px) {
+    .user-description {
+        margin-bottom: 30px;
+    }
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Nunito', sans-serif;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+
+
+.form-container .title {
+    color: #ac40ab;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.form-container .form-horizontal .form-group {
+    margin: 0 0 25px 0;
+}
+
+.form-container .form-horizontal .form-group label {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.form-container .form-horizontal .form-control {
+    color: #333;
+    background: #ecf0f3;
+    font-size: 15px;
+    height: 50px;
+    padding: 20px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #fff;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+
+.form-container .form-horizontal .form-control:focus {
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #fff;
+    outline: none;
+}
+
+.form-container .form-horizontal .form-control::placeholder {
+    color: #808080;
+    font-size: 14px;
+}
+
+.form-container .form-horizontal .btn {
+    color: #000;
+    background-color: #ac40ab;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 12px 15px 11px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px #fff;
+    border: none;
+    transition: all 0.5s ease 0s;
+}
+
+.form-container .form-horizontal .btn:hover,
+.form-container .form-horizontal .btn:focus {
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: none;
+    outline: none;
+}
+
+.bodyTodo{
+   
 }

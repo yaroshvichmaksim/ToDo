@@ -1,76 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import ToDoForm from './components/ToDoForm';
-import ToDoList from './components/ToDoList';
-import './styles/todolist.css'
-import Input from './UI/Input/Input';
-import Select from './UI/Select';
+import { Route, Router, Routes } from "react-router-dom";
+import ToDo from "./pages/ToDo";
+import React, {useState, useEffect} from "react";
+import UserPage from "./pages/UserPage";
+import Nav from "./UI/Nav/Nav";
+import GetService from "./API/GetService";
 
 function App() {
 
-  var todo1 = [];
-  const [todos, setTodos] = useState(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []);
  
-
-  const list = JSON.parse(localStorage.getItem(localStorage.getItem('todos')));
- 
-
-  const createToDo = (addToDo) => {
-    localStorage.clear();
-    todo1 = todos;
-    localStorage.clear();
-    setTodos([...todo1, addToDo]);
-
-    localStorage.setItem('todos', JSON.stringify(todo1));
-
-    console.log(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [])
-  
-  }
-  const deleteToDo = (toDo) => {
-
-    todo1 = todos;
-    console.log(todo1);
-    setTodos(todo1.filter(p => p.id !== toDo.id));
-    localStorage.setItem('todos', JSON.stringify(todo1));
-
-
-  }
-
-  const deleteAll = (toDo) => {
-    setTodos(todos.filter(p => p.id === 0));
-    localStorage.clear();
-  }
-
-  const [selectedSort, setSelectedSort] = useState('');
-
-  const sortToDo = (sort) => {
-    console.log(sort);
-    setSelectedSort(sort);
-    console.log(selectedSort);
-    setTodos([...todos].sort((a, b) => a[sort].localeCompare(b[sort])))
-    //setTodos([sort].sort());
-    console.log(sort);
-  }
-
+    
   return (
-    <div className="App">
-      <ToDoForm create={createToDo} removeAll={deleteAll}></ToDoForm>
-      <hr style={{ margin: '30px 0', color: "white" }} />
-      <Select
-        value={selectedSort}
-        onChange={sortToDo}
-        defaultValue={'Сортировка по'}
-        options={[
-          { value: 'body', text: 'По названию' },
-          { value: 'id', text: 'По дате' },
-        ]}>
-      </Select>
-      {todos.length
-        ? <ToDoList remove={deleteToDo} todos={todos} title={'Список задач'}></ToDoList>
-        : <p className='h1' style={{ color: 'white', textAlign: 'center', paddingTop: '30px' }}>У вас нет активных задач</p>
-      }
+    
 
+    <div className="main">
+    <Nav></Nav>
+    <Routes>
+      
+      <Route exact path="todos" element={<ToDo />}></Route>
+      <Route exact path="users" element={<UserPage  />}></Route>
+    </Routes>
     </div>
-  );
+
+  )
 }
 
 export default App;
